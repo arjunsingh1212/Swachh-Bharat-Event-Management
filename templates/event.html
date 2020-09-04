@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='event-pic.jpg') }}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>{{event.EventName}}</h1>
+          <h2 class="subheading">{{event.Tagline}}</h2>
+          <span class="meta">Created by
+            <a href="#">Admin</a>
+            <br>
+            Event on {{event.EventDate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {{event.Description}}
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1>Volunteer Details</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Duty</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for volunteer in volunteers %}
+          <tr>
+            <td>{{volunteer.Name}}</td>
+            <td>{{volunteer.Age}}</td>
+            <td>{{volunteer.Duty}}</td>
+            <td>{{volunteer.PhoneNumber}}</td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

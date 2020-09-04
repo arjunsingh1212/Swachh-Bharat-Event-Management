@@ -1,0 +1,12 @@
+{
+  "params": {
+    "local_uri": "mysql://root:@localhost/swachh-bharat-mission",
+    "remote_uri": "sqlite:///swachh-bharat-mission.db",
+    "site_name": "Swachh Bharat Mission",
+    "tag_line": "Clean India, Green India",
+    "no_of_events": 2,
+    "login_image": "login.jpg",
+    "admin_user": "arjun@gmail.com",
+    "admin_password": "passcode"
+  }
+}

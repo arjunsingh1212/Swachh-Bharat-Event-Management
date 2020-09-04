@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>{{params['site_name']}}</h1>
+          <span class="subheading">{{params['tag_line']}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <a href="/edit/0"><button class="btn btn-primary" type="submit">Create a new event</button></a>
+      <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+      <h1>Edit Events</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serial Number</th>
+            <th>Event Name</th>
+            <th>Event Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+          <tr>
+            <td>{{event.SerialNumber}}</td>
+            <td>{{event.EventName}}</td>
+            <td>{{event.EventDate}}</td>
+            <td><a href="/edit/{{event.SerialNumber}}"><button class="btn btn-primary">Edit</button></a></td>
+            <td><a href="/delete/{{event.SerialNumber}}"><buttun class="btn btn-primary">Delete</buttun></a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- Pager -->
+      <div class="clearfix">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

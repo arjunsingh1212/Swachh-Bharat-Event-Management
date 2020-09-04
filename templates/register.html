@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/register-bg.jpg') }}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>Register Now</h1>
+          <span class="subheading">Thanks for extending the hand of help</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1>Event Details</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Serial Number</th>
+            <th>Event Name</th>
+            <th>Tagline</th>
+            <th>Event Date</th>
+            <th>Event Number</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for event in events %}
+          <tr>
+            <td>{{event.SerialNumber}}</td>
+            <td>{{event.EventName}}</td>
+            <td>{{event.Tagline}}</td>
+            <td>{{event.EventDate}}</td>
+            <td>{{event.EventNumber}}</td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <p>Thank You so much for providing the valuable time for this Event. Please Fill the Form Below to Register. You can check the Events above for Reference.</p>
+      <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+      <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+      <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+      <form name="sentMessage" id="contactForm" action="/register" method="post" novalidate>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Name" id="Name" name='Name' required data-validation-required-message="Please enter your name.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Age</label>
+            <input type="text" class="form-control" placeholder="Age" id="Age" name="Age" required data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Event</label>
+            <input type="text" class="form-control" placeholder="Event" id="Event" name="Event" required data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>EventNumber</label>
+            <input type="text" class="form-control" placeholder="EventNumber" id="EventNumber" name="EventNumber" required data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Duty</label>
+            <input type="text" class="form-control" placeholder="Duty" id="Duty" name="Duty" required data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>PhoneNumber</label>
+            <input type="text" class="form-control" placeholder="PhoneNumber" id="PhoneNumber" name="PhoneNumber" required data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
