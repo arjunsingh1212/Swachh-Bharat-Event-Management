@@ -81,6 +81,11 @@ def event_route(event_slug):
 def about():
     return render_template('about.html', params=params)
 
+@app.route("/author")
+def author():
+    return render_template('author.html')
+
+
 @app.route("/dashboard", methods=['GET','POST'])
 def dashboard():
     if('user' in session and session['user'] == params['admin_user']):
@@ -96,6 +101,12 @@ def dashboard():
             return render_template('dashboard.html', params=params, events=events)
 
     return render_template('login.html',params=params)
+
+@app.route("/display-feedbacks")
+def display_feedbacks():
+    if('user' in session and session['user'] == params['admin_user']):
+        feedbacks = Feedbacks.query.all()
+        return render_template('display-feedbacks.html', params=params, feedbacks=feedbacks)
 
 @app.route("/edit/<string:sno>",methods = ['GET','POST'])
 def edit(sno):

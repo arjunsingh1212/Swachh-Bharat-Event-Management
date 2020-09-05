@@ -19,30 +19,27 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <a href="/edit/0"><button class="btn btn-lg btn-outline-dark" type="submit">Create a new event</button></a>
-      <a href="/display-feedbacks"><button class="btn btn-lg btn-outline-dark">View Feedbacks</button></a>
+      <a href="/dashboard"><button class="btn btn-lg btn-outline-dark">Dashboard Home</button></a>
       <a href="/logout"><button class="btn btn-lg btn-outline-dark">Logout</button></a>
-      <h1>Edit Events</h1>
+      <h1>Displaying Feedbacks</h1>
       <table class="table">
         <thead>
           <tr>
             <th>Serial Number</th>
-            <th>Event Name</th>
-            <th>Event Date</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Feedback</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
-          {% for event in events %}
+          {% for feedback in feedbacks %}
           <tr>
-            <td>{{event.SerialNumber}}</td>
-            <td>{{event.EventName}}</td>
-            <td>{{event.EventDate}}</td>
-            <td><a href="/edit/{{event.SerialNumber}}"><button class="btn btn-lg btn-outline-dark">Edit</button></a></td>
-            <td><a href="/delete/{{event.SerialNumber}}">
-                <buttun class="btn btn-lg btn-outline-dark">Delete</buttun>
-              </a></td>
+            <td>{{feedback.SerialNumber}}</td>
+            <td>{{feedback.Name}}</td>
+            <td>{{feedback.Email}}</td>
+            <td>{{feedback.Feedback}}</td>
+            <td>{{feedback.Date}}</td>
           </tr>
           {% endfor %}
         </tbody>

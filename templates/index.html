@@ -27,7 +27,7 @@
           <h3 class="post-subtitle">{{event.Tagline}}</h3>
         </a>
         <p class="post-meta">Created by
-          <a href="#">Admin</a> <br> Event on {{event.EventDate}}</p>
+          <a href="/author">Admin</a> <br> Event on {{event.EventDate}}</p>
       </div>
 
       {{event.Description[0:143]}}...
@@ -38,8 +38,8 @@
 
       <!-- Pager -->
       <div class="clearfix">
-        <a class="btn btn-primary float-left" href={{prev}}>&larr; Previous </a>
-        <a class="btn btn-primary float-right" href={{next}}>Next →</a>
+        <a class="btn btn-lg btn-outline-dark float-left" href={{prev}}>&larr; Previous </a>
+        <a class="btn btn-lg btn-outline-dark float-right" href={{next}}>Next →</a>
       </div>
     </div>
   </div>
