@@ -142,12 +142,18 @@ footer .copyright {
 }
 
 .form-signin {
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .login-theme {
   background-color: black;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-signin {
+    padding-top: 200px;
+  }
 }
 
 .fa {
