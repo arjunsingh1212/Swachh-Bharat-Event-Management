@@ -76,3 +76,5 @@ If all the dependencies are satisfied, then you are good to go. The application 
 
 #### Note
 If you want ot use the SQL database of XAMPP server then, change the Database configuration used in the `app.py` source code file from `remote_server` to `local_server`, import the `swachh-bharat-mission.sql` database on the `phpmyadmin` local server and you’ll be good to go. :)
+
+> Also note than the email id and password for Admin Login page can be found out via `config.json` file
