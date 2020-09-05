@@ -158,7 +158,6 @@ def register():
         Event = request.form.get('Event')
         EventNumber = request.form.get('EventNumber')
         Duty = request.form.get('Duty')
-        # RegistrationDate = request.form.get('RegistrationDate')
         PhoneNumber = request.form.get('PhoneNumber')
         entry = Volunteers(Name=Name, Age = Age, Event=Event, EventNumber=EventNumber, Duty=Duty, RegistrationDate=datetime.now() , PhoneNumber=PhoneNumber)
         db.session.add(entry)
