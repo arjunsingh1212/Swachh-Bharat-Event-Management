@@ -162,6 +162,7 @@ def register():
         entry = Volunteers(Name=Name, Age = Age, Event=Event, EventNumber=EventNumber, Duty=Duty, RegistrationDate=datetime.now() , PhoneNumber=PhoneNumber)
         db.session.add(entry)
         db.session.commit()
+        return render_template('/thankyou.html')
     return render_template('register.html', params=params, events=events)
 
 @app.route("/feedback", methods = ['GET', 'POST'])
@@ -173,6 +174,7 @@ def feedback():
         entry = Feedbacks(Name=name, Email = email, Feedback = feedback, Date= datetime.now() )
         db.session.add(entry)
         db.session.commit()
+        return render_template('/thankyou.html')
     return render_template('feedback.html', params=params)
 
 if __name__ == "__main__":
